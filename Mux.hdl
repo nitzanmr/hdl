@@ -1,0 +1,13 @@
+
+
+
+CHIP Mux:
+    IN a,b,select;
+    OUT out;
+
+    PARTS:
+        Not(a=select,takefirst);
+        And(a=a,b=takefirst,out=firstO);
+        And(a=b,b=select,out=secondO);
+        And(a=a,b=b,out=aandb);
+        3wayOr(a=firstO,b=secondO,c=aandb,out=out);

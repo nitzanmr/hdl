@@ -1,0 +1,7 @@
+
+CHIP 3wayOr:
+    IN a,b,c;
+    OUT out;
+PARTS:
+Or(a=a,b=b,out=ab);
+Or(a=ab, b=c, out=out);
